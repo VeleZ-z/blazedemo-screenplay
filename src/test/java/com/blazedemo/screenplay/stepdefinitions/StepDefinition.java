@@ -8,7 +8,6 @@ import com.blazedemo.screenplay.questions.TheConfirmationTransactionId;
 import com.blazedemo.screenplay.questions.TheFlightCount;
 import com.blazedemo.screenplay.questions.TheFlightOnPurchasePage;
 import com.blazedemo.screenplay.questions.ThePriceOnPurchasePage;
-import com.blazedemo.screenplay.questions.TheResultsPageTitle;
 import com.blazedemo.screenplay.questions.TheTotalCostOnPurchasePage;
 import com.blazedemo.screenplay.tasks.ChooseFlight;
 import com.blazedemo.screenplay.tasks.ConfirmPurchase;
@@ -98,11 +97,6 @@ public class StepDefinition {
     @Then("the results page should display available flights")
     public void theResultsPageShouldDisplayAvailableFlights() {
         user.should(seeThat(TheFlightCount.onResultsPage(), greaterThan(0)));
-    }
-
-    @Then("the results page should display the title {string}")
-    public void theResultsPageShouldDisplayTheTitle(String expectedTitle) {
-        user.should(seeThat(TheResultsPageTitle.displayed(), containsString(expectedTitle)));
     }
 
     @Then("the purchase page should show the fixed price {int}")

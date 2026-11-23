@@ -32,17 +32,7 @@ public class Enter implements Interaction {
     @Override
     public void performAs(Actor actor) {
         actor.attemptsTo(net.serenitybdd.screenplay.actions.Enter.theValue(value).into(target));
-        demoPause();
+        DemoPause.delay();
     }
 
-    private void demoPause() {
-        String delayMs = System.getProperty("demo.delay.ms", "0");
-        try {
-            long ms = Long.parseLong(delayMs);
-            if (ms > 0) {
-                Thread.sleep(ms);
-            }
-        } catch (NumberFormatException | InterruptedException ignored) {
-        }
-    }
 }
