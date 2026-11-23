@@ -18,7 +18,7 @@ public class ChooseFlight implements Task {
         return new ChooseFlight(ReservePage.FIRST_CHOOSE_BUTTON);
     }
 
-    /** Accepts codes like "AL969" or "VA12"; only the digits match the flight number column. */
+    /** Chooses the flight by the number shown in the flight number column, e.g. "9696" or "12". */
     public static ChooseFlight byFlightNumber(String code) {
         return new ChooseFlight(ReservePage.chooseButtonForFlightNumber(code.replaceAll("\\D", "")));
     }
